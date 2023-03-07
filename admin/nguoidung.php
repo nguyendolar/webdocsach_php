@@ -29,10 +29,12 @@
                                 <thead>
                                 <tr style="background-color : #6D6D6D">
                                         <th>STT</th>
-                                        <th>Họ tên</th>
-                                        <th>Email</th>
+                                        <th>Mã người dùng</th>
+                                        <th>Tên hiển thị</th>
                                         <th>Tài khoản</th>
                                         <th>Mật khẩu</th>
+                                        <th>Cấp bậc</th>
+                                        <th>Trạng thái</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
@@ -45,31 +47,44 @@
                                     $stt = 1;
                                     while ($arUser = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                                         $idModelDel = "exampleModalDel".$arUser["id"] ;
+                                        $idModelDelK = "exampleModalDelK".$arUser["id"] ;
+                                        $idModelDelM = "exampleModalDelM".$arUser["id"] ;
                                     ?>
                                     <tr>
                                         <td><?php echo $stt ?></td>
-                                        <td><?php echo $arUser["hoten"] ?></td>
-                                        <td><?php echo $arUser["email"] ?></td>
+                                        <td>ND_<?php echo $arUser["id"] ?></td>
+                                        <td><?php echo $arUser["tenhienthi"] ?></td>
                                         <td><?php echo $arUser["taikhoan"] ?></td>
-                                        <td>*******</td>
+                                        <td><?php echo $arUser["matkhau"] ?></td>
+                                        <td><?php echo $arUser["capbac"] == 1 ? 'VIP' : 'Thường' ?></td>
+                                        <td><?php echo $arUser["trangthai"] == 1 ? 'Hoạt động' : 'Đang khóa' ?></td>
                                         <td>
+                                            
+                                            <?php if($arUser["trangthai"] == 1) {?>
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                                data-bs-target="#<?php echo $idModelDel ?>">
-                                                Xóa
+                                                data-bs-target="#<?php echo $idModelDelK ?>">
+                                                Khóa
                                             </button>
+                                            <?php } ?>
+                                            <?php if($arUser["trangthai"] == 2) {?>
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                                data-bs-target="#<?php echo $idModelDelM ?>">
+                                                Mở khóa
+                                            </button>
+                                            <?php } ?>
                                             <!--Dele-->
                                             <div class="modal fade" id="<?php echo $idModelDel ?>" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Bạn chắc chắn muốn xóa ?</h5>
+                                                            <h5 class="modal-title" id="exampleModalLabel">Bạn chắc chắn muốn nâng cấp VIP ?</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                     aria-label="Close"></button>
                                                         </div>
 
                                                         <div class="modal-body">
-                                                            Người dùng : <?php echo $arUser["hoten"] ?>
+                                                            Người dùng : <?php echo $arUser["tenhienthi"] ?>
                                                             <form action="function.php" method="post">
                                                                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $arUser["id"] ?>">
                                                                 <div class="modal-footer" style="margin-top: 20px">
@@ -77,7 +92,71 @@
                                                                             data-bs-dismiss="modal">
                                                                         Đóng
                                                                     </button>
-                                                                    <button style="width:100px" type="submit" class="btn btn-danger" name="deletend"> Xóa</button>
+                                                                    <button style="width:100px" type="submit" class="btn btn-primary" name="ncnd"> Nâng cấp</button>
+
+                                                                </div>
+
+                                                            </form>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Dele-->
+                                            <!--Dele-->
+                                            <div class="modal fade" id="<?php echo $idModelDelK ?>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Bạn chắc chắn muốn khóa ?</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            Người dùng : <?php echo $arUser["tenhienthi"] ?>
+                                                            <form action="function.php" method="post">
+                                                                <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $arUser["id"] ?>">
+                                                                <div class="modal-footer" style="margin-top: 20px">
+                                                                    <button style="width:100px" type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">
+                                                                        Đóng
+                                                                    </button>
+                                                                    <button style="width:100px" type="submit" class="btn btn-danger" name="khoand"> Khóa</button>
+
+                                                                </div>
+
+                                                            </form>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Dele-->
+                                            <!--Dele-->
+                                            <div class="modal fade" id="<?php echo $idModelDelM ?>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Bạn chắc chắn muốn mở khóa ?</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            Người dùng : <?php echo $arUser["tenhienthi"] ?>
+                                                            <form action="function.php" method="post">
+                                                                <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $arUser["id"] ?>">
+                                                                <div class="modal-footer" style="margin-top: 20px">
+                                                                    <button style="width:100px" type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">
+                                                                        Đóng
+                                                                    </button>
+                                                                    <button style="width:100px" type="submit" class="btn btn-warning" name="mknd"> Mở khóa</button>
 
                                                                 </div>
 

@@ -16,7 +16,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Người dùng
                         </a>
-                        <a class="nav-link" href="binhluandanhgia.php">
+                        <a class="nav-link" href="lichsu.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Lịch sử giao dịch
                         </a>

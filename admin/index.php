@@ -25,6 +25,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
+                    <img src="https://storage.googleapis.com/enterknow.com/data-contents/2021/09/Read-More-Books-scaled.jpg" width="700px"/>
                 </div>
             </main>
             <?php include('inc/footer.php')?>

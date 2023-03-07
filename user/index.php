@@ -66,132 +66,41 @@ include('../admin/inc/connect.php');
     </script>
 </div>
     <?php } ?>
+    <?php
+    if (isset($_GET['xnct'])) {
+    ?>
+<div class="toast" data-delay="2000" style="position:fixed;top: 100PX; right: 10PX;z-index: 2000;width: 300px">
+    <script>
+        swal({
+            title: 'Xác nhận thành công. Vui lòng đợi Admin xác nhận!',
+            icon: 'success',
+            timer: 3000,
+            buttons: true,
+            type: 'success'
+        })
+    </script>
+</div>
+    <?php } ?>
+    <?php
+    if (isset($_GET['log'])) {
+    ?>
+<div class="toast" data-delay="2000" style="position:fixed;top: 100PX; right: 10PX;z-index: 2000;width: 300px">
+    <script>
+        swal({
+            title: 'Bạn chưa đăng nhập!',
+            icon: 'error',
+            timer: 3000,
+            buttons: true,
+            type: 'error'
+        })
+    </script>
+</div>
+    <?php } ?>
         <!--Main Header: Begin-->
-        <section class="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-5 w-logo">
-                        <div class="logo hd-pd ">
-                            <a href="index.php" ><img
-                                    src="http://bizweb.dktcdn.net/100/122/937/files/logo-lets-read-eng-n-vie-2.jpg?v=1475655360137" alt="Thiết kế in ấn M.A.P Hải Phòng"
-                                     style="max-height: 60px;" /></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9 visible-md visible-lg">
-                        <nav id="main-menu" class="main-menu clearfix">
-                            <ul>
-                                <?php
-                                if (empty($_SESSION['taikhoan'])) { ?>
-                                <li class="level0 parent col1 all-product hd-pd"><a
-                                        ><span>Người dùng</span><i
-                                            class="fa fa-chevron-down"></i></a>
-                                    <ul class="level0">
-                                    <li><a href="dangky.php">Đăng ký</a></li>
-                                    <li><a href="dangnhap.php">Đăng nhập</a></li>
-                                    </ul>
-                                </li>
-                                <?php }else{?>
-                                    <li class="level0 parent col1 all-product hd-pd"><a
-                                        ><span><?php echo $_SESSION['hoten']; ?></span><i
-                                            class="fa fa-chevron-down"></i></a>
-                                    <ul class="level0">
-                                    <li><a href="doimatkhau.php">Đổi mật khẩu</a></li>
-                                    <li><a href="dangxuat.php">Đăng xuất</a></li>
-                                    </ul>
-                                </li>
-                                <?php } ?>
-                                </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <?php include('header.php'); ?>
         <!--Main Header: End-->
     </header>
     <main class="main ">
-        <!--Home slider : Begin-->
-        <section class="home-slidershow">
-            <div class="slide-show">
-                <div class="vt-slideshow">
-                    <ul>
-                        <li class="slide15" data-transition="random">
-                            <img src="source/slides/thiet-ke-online-5.jpg" alt="Liên hệ Zalo" />
-                            <div class="tp-caption lfr" data-x="left" data-hoffset="" data-y="170" data-start="800"
-                                data-speed="200" data-endspeed="100">
-                                <span class="style1"></span>
-                            </div>
-                            <div class="tp-caption lfb" data-x="left" data-hoffset="" data-y="225" data-start="800"
-                                data-speed="200" data-endspeed="100">
-                                <span class="style2">
-                                </span>
-                            </div>
-                            <div class="tp-caption lfr" data-x="left" data-y="367" data-start="800" data-speed="200"
-                                data-easing="easeInOutQuint" data-endspeed="100">
-                                <a href="gioi-thieu-m-a-p.html" class="btn-sn">Đọc thêm</a>
-                            </div>
-                        </li>
-                        <li class="slide14" data-transition="random">
-                            <img src="source/slides/bg_slider_3-recovered.jpg"
-                                alt="&amp;lt;span class=&amp;quot;textcolor&amp;quot;&amp;gt;IN&amp;lt;/span&amp;gt;Name Card" />
-                            <div class="tp-caption lfr" data-x="left" data-hoffset="" data-y="170" data-start="800"
-                                data-speed="200" data-endspeed="100">
-                                <span class="style1"><span class="textcolor">IN</span>Name Card</span>
-                            </div>
-                            <div class="tp-caption lfb" data-x="left" data-hoffset="" data-y="225" data-start="800"
-                                data-speed="200" data-endspeed="100">
-                                <span class="style2">
-                                    - Thiết kế mẫu trong vòng 24h<br />- Sản phẩm chuyên nghiệp <br />- In trên máy in
-                                    kỹ thuật số <br /><big>Hãy liên hệ ngay với chúng tôi</big><br /><strong> Hotline:
-                                        0123.3 757 929</strong><br /> </span>
-                            </div>
-                            <div class="tp-caption lfr" data-x="left" data-y="367" data-start="800" data-speed="200"
-                                data-easing="easeInOutQuint" data-endspeed="100">
-                                
-                            </div>
-                        </li>
-                        <li class="slide12" data-transition="random">
-                            <img src="source/slides/bg_slider_ho_so_nang_luc.jpg"
-                                alt="&amp;lt;span class=&amp;quot;textcolor&amp;quot;&amp;gt;Hồ sơ năng lực &amp;lt;/span&amp;gt;" />
-                            <div class="tp-caption lfr" data-x="left" data-hoffset="" data-y="170" data-start="800"
-                                data-speed="200" data-endspeed="100">
-                                <span class="style1"><span class="textcolor">Hồ sơ năng lực </span></span>
-                            </div>
-                            <div class="tp-caption lfb" data-x="left" data-hoffset="" data-y="225" data-start="800"
-                                data-speed="200" data-endspeed="100">
-                                <span class="style2">
-                                    <strong>Hãy để Hồ sơ năng lực là điểm khởi đầu với các đối tác tiềm
-                                        năng</strong><br />- Tư vấn thiết kế Hồ sơ năng lực<br />- Xây dựng nội dung,
-                                    hình ảnh chuyên nghiệp<br />- Sản phẩm in trên công nghệ hiện đại<br />- Đáp ứng với
-                                    mọi số lượng bản in<br /><big>Hãy liên hệ ngay với chúng tôi để được tư vấn! </big>
-                                </span>
-                            </div>
-                            <div class="tp-caption lfr" data-x="left" data-y="367" data-start="800" data-speed="200"
-                                data-easing="easeInOutQuint" data-endspeed="100">
-                                
-                            </div>
-                        </li>
-                        <li class="slide13" data-transition="random">
-                            <img src="source/slides/bg_slider_he_thong_nhan_dien_thuong_hieu.jpg"
-                                alt="&amp;lt;span class=&amp;quot;textcolor&amp;quot;&amp;gt;Nhận diện thương hiệu&amp;lt;/span&amp;gt;" />
-                            <div class="tp-caption lfr" data-x="left" data-hoffset="" data-y="170" data-start="800"
-                                data-speed="200" data-endspeed="100">
-                                <span class="style1"><span class="textcolor">Nhận diện thương hiệu</span></span>
-                            </div>
-                            <div class="tp-caption lfb" data-x="left" data-hoffset="" data-y="225" data-start="800"
-                                data-speed="200" data-endspeed="100">
-                                <span class="style2">
-                                    <strong> Hãy liên hệ với Chúng tôi để được tư vấn!<br />Hotline: 0225.3 757
-                                        929</strong> </span>
-                            </div>
-                            <div class="tp-caption lfr" data-x="left" data-y="367" data-start="800" data-speed="200"
-                                data-easing="easeInOutQuint" data-endspeed="100">
-                                
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
         <section class="trust-w">
             <div class="container">
                 <div class="row">
@@ -200,8 +109,7 @@ include('../admin/inc/connect.php');
                         <div class="tr-text">
                             <h3>Tốc độ</h3>
                             <span class="tr-line"></span>
-                            <p>Tư vấn thiết kế chuyên nghiệp đem lại cho khách hàng những mẫu thiết kế sáng tạo. Sản
-                                phẩm in chuyên nghiệp.</p>
+                            <p>Đội ngũ luôn cập nhật thông tin và cung cấp cho độc giả những nội dung sách mới nhất.</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 block-trust trust-col-quantity">
@@ -209,8 +117,8 @@ include('../admin/inc/connect.php');
                         <div class="tr-text">
                             <h3>Chất lượng</h3>
                             <span class="tr-line"></span>
-                            <p>Tại M.A.P chất lượng là tôn chỉ trong mọi hoạt động. Sản phẩm bàn giao sẽ làm hài lòng
-                                quý khách hàng</p>
+                            <p>Tại Website đọc sách, chất lượng là điều ưu tiên hàng đầu trong mọi hoạt động. Những nội dung sách sẽ làm hài lòng
+                                quý độc giả</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 block-trust trust-col-quantity">
@@ -218,8 +126,8 @@ include('../admin/inc/connect.php');
                         <div class="tr-text">
                             <h3>Sáng tạo</h3>
                             <span class="tr-line"></span>
-                            <p>M.A.P luôn sáng tạo không ngừng.
-                                Nỗ lực mang tới khách hàng những sản phẩm
+                            <p>Đội ngũ luôn sáng tạo không ngừng.
+                                Nỗ lực mang tới quý độc giả những nội dung sách
                                 với chất lượng tốt nhất.</p>
                         </div>
                     </div>
@@ -228,162 +136,17 @@ include('../admin/inc/connect.php');
                         <div class="tr-text">
                             <h3>Giá trị</h3>
                             <span class="tr-line"></span>
-                            <p>M.A.P cam kết cung cấp các sản phẩm tối ưu với chi phí thấp nhất.</p>
+                            <p>Đội ngũ cam kết cung cấp các nội dung sách hay và hấp dẫn nhất.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="home-out-recent">
-            <div class="container">
-                <div class="row">
-                    <div class="block-title-w">
-                        <h2 class="block-title">
-                            Sản phẩm </h2>
-                        <span class="icon-title">
-                            <span></span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <ul>
-                            <li class="active">
-                                <a data-toggle="tab" href="#tabproductall">
-                                    Tất cả </a>
-                            </li>
-                            <?php 
-                            $query = "SELECT * 
-                            FROM loaisanpham";
-                            $result = mysqli_query($connect, $query);
-                            while ($arUser = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                            ?>
-                            <li class="last"><a data-toggle="tab" href="#tabproduct<?php echo $arUser['id'] ?>"><?php echo $arUser['tenloaisanpham'] ?></a></li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                    <div class="tab-content" id="recent-works-gallery" itemscope
-                        itemtype="http://schema.org/ImageGallery">
-                        <div class="tab-pane active" id="tabproductall">
-                            <!-- DS sản phẩm -->
-                            <?php 
-                            $query = "SELECT * 
-                            FROM sanpham 
-                            ORDER BY id DESC
-                            LIMIT 9";
-                            $result = mysqli_query($connect, $query);
-                            while ($arUser = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                            ?>
-                            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                                <div class="w-block-recent-work">
-                                    <div class="image-recent-work">
-                                        <figure itemprop="associatedMedia" itemscope
-                                            itemtype="http://schema.org/ImageObject">
-                                            <a href="../admin/image/<?php echo $arUser['anhsanpham'] ?>"
-                                                itemprop="contentUrl" data-size="1600x1068"
-                                                data-author="<?php echo $arUser['tensanpham'] ?>"><img style="width : 360px; height : 240px"
-                                                    src="../admin/image/<?php echo $arUser['anhsanpham'] ?>"
-                                                    alt="<?php echo $arUser['tensanpham'] ?>"
-                                                    title="<?php echo $arUser['tensanpham'] ?>" itemprop="thumbnail" /></a>
-                                            <figcaption itemprop="caption description" style="display: none"><?php echo $arUser['tensanpham'] ?></figcaption>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php } ?>
-                            <!-- -->
-                        </div>
-                        <?php 
-                            $queryl = "SELECT * 
-                            FROM loaisanpham";
-                            $resultl = mysqli_query($connect, $queryl);
-                            while ($arUserl = mysqli_fetch_array($resultl, MYSQLI_ASSOC)) {
-                                $idlsp = $arUserl['id'];
-                            ?>
-                        <div class="tab-pane" id="tabproduct<?php echo $idlsp ?>">
-                            <!-- DS sản phẩm -->
-                            <?php 
-                            $query = "SELECT * 
-                            FROM sanpham 
-                            WHERE loaisanpham_id = '".$idlsp."'";
-                            $result = mysqli_query($connect, $query);
-                            while ($arUser = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                            ?>
-                            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                                <div class="w-block-recent-work">
-                                    <div class="image-recent-work">
-                                        <figure itemprop="associatedMedia" itemscope
-                                            itemtype="http://schema.org/ImageObject">
-                                            <a href="../admin/image/<?php echo $arUser['anhsanpham'] ?>"
-                                                itemprop="contentUrl" data-size="1600x1068"
-                                                data-author="<?php echo $arUser['tensanpham'] ?>"><img style="width : 360px; height : 240px"
-                                                    src="../admin/image/<?php echo $arUser['anhsanpham'] ?>"
-                                                    alt="<?php echo $arUser['tensanpham'] ?>"
-                                                    title="<?php echo $arUser['tensanpham'] ?>" itemprop="thumbnail" /></a>
-                                            <figcaption itemprop="caption description" style="display: none"><?php echo $arUser['tensanpham'] ?></figcaption>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php } ?>
-                            <!-- -->
-                        </div>
-                        <?php } ?> 
-                            <!-- -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-            <!-- Background of PhotoSwipe. 
-         It's a separate element, as animating opacity is faster than rgba(). -->
-            <div class="pswp__bg"></div>
-            <!-- Slides wrapper with overflow:hidden. -->
-            <div class="pswp__scroll-wrap">
-                <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-                <!-- don't modify these 3 pswp__item elements, data is added later on. -->
-                <div class="pswp__container">
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                </div>
-                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-                <div class="pswp__ui pswp__ui--hidden">
-                    <div class="pswp__top-bar">
-                        <!--  Controls are self-explanatory. Order can be changed. -->
-                        <div class="pswp__counter"></div>
-                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                        <!-- element will get class pswp__preloader--active when preloader is running -->
-                        <div class="pswp__preloader">
-                            <div class="pswp__preloader__icn">
-                                <div class="pswp__preloader__cut">
-                                    <div class="pswp__preloader__donut"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                        <div class="pswp__share-tooltip"></div>
-                    </div>
-                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                    </button>
-                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                    </button>
-                    <div class="pswp__caption">
-                        <div class="pswp__caption__center" style="font-size: 20px"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <section class="home-blog" >
             <div class="container">
                 <div class="row">
                     <div class="block-title-w">
-                        <h2 class="block-title">Bài viết gần đây</h2>
+                        <h2 class="block-title">Sách mới nhất</h2>
                         <span class="icon-title">
                             <span></span>
                             <i class="fa fa-star"></i>
@@ -395,36 +158,43 @@ include('../admin/inc/connect.php');
                                 <div class="wrap-item">
                                 <?php 
                             $baidang = "SELECT * 
-                            FROM baidang 
-                            WHERE id != 1 AND id != 2
-                            ORDER BY id DESC
-                            LIMIT 8";
+                            FROM sach 
+                            ORDER BY id DESC";
                             $resultbd = mysqli_query($connect, $baidang);
                             while ($bd = mysqli_fetch_array($resultbd, MYSQLI_ASSOC)) {
                             ?>
                                     <!--gần đây-->
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item" style="margin-bottom : 10px">
                                         <div class="inner">
-                                            <a href="chitiet.php?id=<?php echo $bd['id'] ?>"
+                                            <a href="#"
                                                 class="image"
-                                                title="<?php echo $bd['tieude'] ?>"><img style="width : 300px; height : 190px"
+                                                title="<?php echo $bd['tensach'] ?>"><img style="width : 300px; height : 390px"
                                                     src="../admin/image/<?php echo $bd['anh'] ?>"
-                                                    alt="<?php echo $bd['tieude'] ?>"
-                                                    title="<?php echo $bd['tieude'] ?>"
+                                                    alt="<?php echo $bd['tensach'] ?>"
+                                                    title="<?php echo $bd['tensach'] ?>"
                                                     itemprop="thumbnailUrl" /></a>
                                             <div class="info">
                                                 <div class="title" style="height : 45px">
-                                                    <a href="chitiet.php?id=<?php echo $bd['id'] ?>"
-                                                        title="<?php echo $bd['tieude'] ?>"><span
-                                                            itemprop="headline"><?php echo $bd['tieude'] ?></span></a>
+                                                    <a href="#"
+                                                        title="<?php echo $bd['tensach'] ?>"><span
+                                                            itemprop="headline"><?php echo $bd['tensach'] ?></span></a>
                                                 </div>
                                                 <div class="sub-title">
-                                                    <p>Đăng lúc : <?php echo $bd['thoigiandang'] ?> </p><p> Tác giả : <?php echo $bd['tacgia'] ?> </p>
+                                                    <p> Tác giả : <?php echo $bd['tacgia'] ?> </p>
                                                 </div>
-                                                <a href="chitiet.php?id=<?php echo $bd['id'] ?>"
+                                                <?php
+                                                if (empty($_SESSION['taikhoan'])){
+                                                ?>
+                                                 <a href="index.php?log=1"
                                                     class="read-more"
-                                                    title="<?php echo $bd['tieude'] ?>"
-                                                    itemprop="url">Đọc thêm</a>
+                                                    title="<?php echo $bd['tensach'] ?>"
+                                                    itemprop="url">Đọc chi tiết</a>
+                                                    <?php }else{ ?>
+                                                    <a href="chitiet.php?id=<?php echo $bd['id'] ?>"
+                                                    class="read-more"
+                                                    title="<?php echo $bd['tensach'] ?>"
+                                                    itemprop="url">Đọc chi tiết</a>
+                                                        <?php } ?>
                                             </div>
                                         </div>
                                     </div>
@@ -439,377 +209,11 @@ include('../admin/inc/connect.php');
             </div>
             </div>
         </section>
-        <section class="home-make-print">
-            <div class="container">
-                <div class="row">
-                    <div class="block-title-w">
-                        <h2 class="block-title">
-                            Với Vai Trò Là Chuyên Gia Thương Hiệu M.A.P Có Thể Giúp Bạn
-                        </h2>
-                        <span class="icon-title">
-                            <span></span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                    </div>
-                    <!--make print Title : End -->
-                    <div class="print-content">
-                        <div class="col-md-4 col-sm-4 print-block print-block-left">
-                            <div class="w-print-block frist">
-                                <div class="print-icon">
-                                    <i class="fa fa-hand-o-up"></i>
-                                    <i class="fa fa-magic"></i>
-                                </div>
-                                <div class="print-title">
-                                    <a href="thiet-ke.html">Thiết kế thương hiệu</a>
-                                </div>
-                                <!--<div class="print-number">
-                            <span>01</span>
-                        </div>-->
-                                <div class="print-txt">
-                                    <p>
-                                        Thiết kế Logo | Thiết kế nhận diện thương hiệu<br />
-                                        Thiết kế Profile công ty | Làm mới thương hiệu<br />
-                                        Thiết kế tài liệu bán hàng Sales Kit
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 print-block print-block-center">
-                            <div class="w-print-block">
-                                <div class="print-icon">
-                                    <i class="fa fa-line-chart"></i>
-                                    <i class="fa fa-arrow-circle-o-up"></i>
-                                </div>
-                                <div class="print-title">
-                                    <a href="thiet-ke.html">Thiết kế marketing</a>
-                                </div>
-                                <!--<div class="print-number">
-                            <span>02</span>
-                        </div>-->
-                                <div class="print-txt">
-                                    <p>
-                                        Thiết kế brochure | Thiết kế Catalogue<br />
-                                        Thiết kế báo cáo thường niên<br />
-                                        Thiết kế bao bì sản phẩm | In ấn chuyên nghiệp
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 print-block print-block-right">
-                            <div class="w-print-block">
-                                <div class="print-icon">
-                                    <i class="fa fa-play"></i>
-                                </div>
-                                <div class="print-title">
-                                    <a href="dich-vu.html">Truyền thông thương hiệu</a>
-                                </div>
-                                <!--<div class="print-number">
-                            <span>03</span>
-                        </div>-->
-                                <div class="print-txt">
-                                    <p>
-                                        Sáng tạo chiến lược | Truyền thông trực tuyến<br />
-                                        Tổ chức sự kiện | Thiết kế pano biển hiệu<br />
-                                        Trang trí Showroom nội ngoại thất
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--<div class="bg_make_print"></div>-->
-        </section>
-        <section class="home-out-recent">
-            <div class="container">
-                <div class="row">
-                    <div class="block-title-w">
-                        <h2 class="block-title">
-                            Dịch vụ </h2>
-                        <span class="icon-title">
-                            <span></span>
-                            <i class="fa fa-star"></i>
-                        </span>
-                        <!-- <ul>
-                            <li class="active">
-                                <a data-toggle="tab" href="#tabserviceAll">
-                                    Tất cả </a>
-                            </li>
-                            <?php
-                            $dv = mysqli_query($connect, "SELECT * FROM loaibaidang
-                            WHERE demuc = 'Dịch Vụ'");
-                            while ($arDv = mysqli_fetch_array($dv, MYSQLI_ASSOC)) {
-                            ?>
-                            <li class="last"><a data-toggle="tab" href="#tabservice<?php echo $arDv['id'] ?>"><?php echo $arDv['tenloaibaidang'] ?></a></li>
-                            <?php } ?>
-                        </ul> -->
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tabserviceAll">
-                             <!-- DS dịch vụ -->
-                             <?php 
-                            $querybd = "SELECT * 
-                            FROM baidang 
-                            WHERE loaibaidang_id IN
-                            (SELECT id FROM loaibaidang WHERE
-                            demuc = 'Dịch Vụ')
-                            ORDER BY id DESC
-                            LIMIT 9";
-                            $resultbd = mysqli_query($connect, $querybd);
-                            while ($arUserbd = mysqli_fetch_array($resultbd, MYSQLI_ASSOC)) {
-                            ?>
-                            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                                <div class="w-block-recent">
-                                    <div class="image-recent">
-                                        <a
-                                            href="chitiet.php?id=<?php echo $arUserbd['id'] ?>"><img
-                                            style="width : 360px; height : 240px" src="../admin/image/<?php echo $arUserbd['anh'] ?>"
-                                                alt="<?php echo $arUserbd['tieude'] ?>"
-                                                title="<?php echo $arUserbd['tieude'] ?>" itemprop="thumbnailUrl" /></a>
-                                    </div>
-                                    <div class="info-recent">
-                                        <h2 itemprop="headline" class="title" style="height : 20px !important">
-                                            <?php echo $arUserbd['tieude'] ?> </h2>
-                                        <div class="text-recent">
-                                        <p>Đăng lúc : <?php echo $arUserbd['thoigiandang'] ?> </p><p> Tác giả : <?php echo $arUserbd['tacgia'] ?> </p>
-                                        </div>
-                                        <br>
-                                        <a href="chitiet.php?id=<?php echo $arUserbd['id'] ?>" class="read-more"
-                                            itemprop="url">Đọc thêm</a>
-                                        <p style="
-                                    position: absolute;
-                                    right: 13px;
-                                    bottom: 0px;
-                                    color: #444;
-                                ">
-                                             </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php } ?>
-                            <!-- DS dịch vụ -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="home-testimonial">
-            <div class="container">
-                <div class="row">
-                    <div class="tes-block" id="testimonial">
-                        <div class="slider-inner">
-                            <div class="wrap-item">
-                                <div class="item">
-                                    <div class="inner">
-                                        <div class="tes-decs">
-                                            <p>&quot; Chúng tôi tự hào khi khách hàng lựa chọn làm đối tác tin cậy
-                                                &quot;</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="inner">
-                                        <div class="tes-decs">
-                                            <p>&quot;...với hơn 3000 khách hàng hiện đang sử dụng các dịch vụ của chúng
-                                                tôi&quot;</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="inner">
-                                        <div class="tes-decs">
-                                            <p>&quot;bằng tâm huyết chúng tôi cam kết đem lại cho Quý khách hàng những
-                                                sản phẩm tốt nhất&quot;</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="bran-block">
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo nam duong"><img
-                                    src="source/doi_tac/logo_nam_duong.png" alt="logo nam duong"
-                                    title="logo nam duong" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo HPN"><img src="source/doi_tac/logo_hpn.png"
-                                    alt="logo HPN" title="logo HPN" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo dhmart"><img src="source/doi_tac/logo_dhmart.png"
-                                    alt="logo dhmart" title="logo dhmart" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo cgv"><img src="source/doi_tac/logo_cgv.png"
-                                    alt="logo cgv" title="logo cgv" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo namtraco"><img src="source/doi_tac/logo_namtraco.png"
-                                    alt="logo namtraco" title="logo namtraco" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo green"><img src="source/doi_tac/logo_green.png"
-                                    alt="logo green" title="logo green" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo sse"><img src="source/doi_tac/logo_sse.png"
-                                    alt="logo sse" title="logo sse" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo tessa"><img src="source/doi_tac/logo_tessa.png"
-                                    alt="logo tessa" title="logo tessa" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo vina steel"><img src="source/doi_tac/logo_viet_uc.png"
-                                    alt="logo vina steel" title="logo vina steel" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo vietlot"><img src="source/doi_tac/logo_vietlot.png"
-                                    alt="logo vietlot" title="logo vietlot" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="logo ana"><img src="source/doi_tac/logo_ana.png"
-                                    alt="logo ana" title="logo ana" /></a>
-                        </div>
-                        <div class="item col-md-2 col-sm-4 col-xs-6">
-                            <a href="#" image="image" title="Logo vikos"><img src="source/doi_tac/logo_vikos.png"
-                                    alt="Logo vikos" title="Logo vikos" /></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
     </main>
-    
-    
     <footer>
-        <div class="footer-main">
-            <div class="container">
-                <div class="row">
-                    <div itemid="#m.a.p" class="col-md-3 col-sm-4 col-xs-12 about-us footer-col">
-                        <h2>Thông tin</h2>
-                        <div id="IMAP_INFO" class="footer-content">
-                            <a href="index.php" class="logo-footer" title="Thiết kế in ấn M.A.P Hải Phòng"><img
-                                    src="source/system/logo/logo_map_white.png" alt="Thiết kế in ấn M.A.P Hải Phòng"
-                                    title="Thiết kế in ấn M.A.P Hải Phòng" /></a>
-                            <ul class="info">
-                                <li>
-                                    <i class="fa fa-home"></i> <span>54D Lê Lợi, Hải Phòng</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-phone"></i> <span>0225 3 757 929 | 0833 757 929</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span>
-                                        <a href="mailto:thietkemap@gmail.com">thietkemap@gmail.com</a>
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-skype"></i> <span>thietkemap</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-clock-o"></i> <span>Thứ 2 - thứ 7: 8h00 - 12h00 / 14h00 -
-                                        18h00</span>
-                                </li>
-                                <li>
-                                    <a href="http://www.dmca.com/Protection/Status.aspx?ID=c41daddb-5c49-4260-a709-7e64677aa513"
-                                        title="DMCA.com Protection Status" class="dmca-badge"> <img
-                                            src="images.dmca.com/Badges/dmca_protected_sml_120acee63.png?ID=c41daddb-5c49-4260-a709-7e64677aa513"
-                                            alt="DMCA.com Protection Status"></a>
-                                </li>
-                            </ul>
-                            <ul class="footer-social">
-                                <li>
-                                    <a href="https://www.facebook.com/imap.vn/" title="Facebook">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://plus.google.com/115620533818286842928" title="Google Plus">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-4 col-xs-12 corporate footer-col">
-                        <h2>Bản đồ</h2>
-                        <div class="footer-content">
-                            <div id="map">
-                                <img src="source/system/map.png" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12 support footer-col">
-                        <h2>Menu</h2>
-                        <div class="footer-content">
-                            <ul>
-                                <li><a href="index.php">Trang chủ</a></li>
-                                <li><a href="chitiet.php?id=1">Giới thiệu M.A.P</a></li>
-                                <li><a href="loaibaidang.php?demuc=1">Dịch vụ</a></li>
-                                <li><a href="loaibaidang.php?demuc=2">Nhật ký sáng tạo</a></li>
-                                <li><a href="loaibaidang.php?demuc=3">Tin tức</a></li>
-                                <li><a href="chitiet.php?id=2">Liên hệ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="copy-right">M.A.P Co.,LTD</p>
-                        <a href="#" id="back-to-top">
-                            <i class="fa fa-chevron-up"></i> Top
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include('footer.php'); ?>
     </footer>
     <div id="sitebodyoverlay"></div>
-    <nav id="mb-main-menu" class="main-menu">
-        <div class="mb-menu-title">
-            <h3>Navigation</h3>
-            <span id="close-mb-menu">
-                <i class="fa fa-times-circle"></i>
-            </span>
-        </div>
-        <ul class="cate_list">
-            <li class="level0"><a href="index.php">Trang chủ</a></li>
-            <li class="level0"><a href="chitiet.php?id=1">Giới thiệu M.A.P</a></li>
-            <li class="level0 parent col1"><a href="#"><span>Dịch vụ</span><i class="fa fa-chevron-down"></i><i
-                        class="fa fa-chevron-right"></i></a>
-                <ul class="level0">
-                    <li><a href="thiet-ke-in/thiet-ke.html">Thiết kế</a></li>
-                    <li><a href="thiet-ke-in/in-chuyen-nghiep.html">In chuyên nghiệp</a></li>
-                    <li><a href="thiet-ke-in/thiet-ke-va-in.html">Thiết kế và in</a></li>
-                </ul>
-            </li>
-            <li class="level0 parent col1"><a href="#"><span>Nhật ký sáng tạo</span><i class="fa fa-chevron-down"></i><i
-                        class="fa fa-chevron-right"></i></a>
-                <ul class="level0">
-                    <li><a href="thiet-ke-in/kien-thuc-thuong-hieu.html">Kiến thức thương hiệu</a></li>
-                    <li><a href="thiet-ke-in/chia-se-tai-lieu-thiet-ke.html">Chia sẻ tài liệu thiết kế</a></li>
-                    <li><a href="thiet-ke-in/nhat-ky-sang-tao-m-a-p.html">Nhật ký sáng tạo M.A.P</a></li>
-                </ul>
-            </li>
-            <li class="level0"><a href="thiet-ke-in/lien-he.html">Liên hệ</a></li>
-        </ul>
-    </nav> <!-- Phone -->
-    
-    <!-- //Phone_END -->
-    <!-- <div class="zalo-chat-widget" data-oaid="2516318981320648182" data-welcome-message="Rất vui khi được hỗ trợ bạn!"
-        data-autopopup="0" data-width="350" data-height="420"></div> -->
     <script src="sp.zalo.me/plugins/sdk.js"></script>
     <script src="cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>

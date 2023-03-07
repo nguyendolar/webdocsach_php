@@ -1,0 +1,19 @@
+Website sẽ bao gôm các chức năng sau
+Người dùng vào website, xem được danh sách các sách, muốn đọc cái nào thì yêu cầu phải đăng nhập
+Sau khi đăng nhập được đọc sách , giới hạn là bao nhiêu đó thôi
+Sẽ có chữ đọc thêm
+Bấm vào đó thì thông báo là phải nâng cấp vip mới đọc thêm được
+Sau đó vào mục tài khoản, có nút chọn nâng cấp vip
+Bấm vào đó
+Sẽ hiển thị mã qr và thông tin momo của quản trị viên lên
+Để cho người dùng quét và ck
+Ck xomg thì bấm ok
+Sau đó admin đăng nhập vào quản trik
+Kiểm tra2 lịch sử giao dịch
+Và kiểm tra tài khoản momo trên đth
+Nếu thấy đúng là có người dùng đó chuyển tiền vào
+Thì cập nhập tài khoản cho người dùng đó lên vip
+Và người dùng đó đăng nhập vào để đọc hết cuốn sách
+Bên admin thì có : quản lý sách, có thể thêm mới, sửa, xoá
+Quản lý người dùng : khoá người dùng, nâng cấp người dùng
+Quản lý lịch sử chuyển tiền
