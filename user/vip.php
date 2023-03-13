@@ -102,13 +102,13 @@ $rownd = mysqli_fetch_array($querynd);
 if($rownd['capbac'] == 2 ){ ?>
         <form action="xuly.php" method="POST">
             <p style="text-align : center">Vui lòng chuyển 100,000 VNĐ qua tài khoản bên dưới với nội dung <strong>ND_<?php echo $_SESSION['id'] ?>_VIP</strong> để nâng cấp tài khoản thành VIP </p>
-            <img src="../admin/image/momo1.jpg" />
+            <img src="../admin/image/momo.jpg" />
            
             <input class="form-control" type="hidden" name="nguoidungid" value="<?php echo $_SESSION['id'] ?>" />
             <button style="margin-bottom : 5px; margin-left : 100px !important" class="btn btn-primary" type="submit" style="background-color : #FFCC2A; color : black" name="xnct" >Xác nhận đã chuyển tiền</button>
         </form>
         <?php }else{?>
-            <h3>Đang đợi Admin xác nhận giao dịch</h3>
+            <h4>Đang đợi Admin xác nhận giao dịch</h4>
         <?php } ?>
     </div>
 </div>

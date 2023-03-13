@@ -111,7 +111,12 @@ if(isset($_POST['mknd'])){
 //Xử lý chuyển tiền
 if(isset($_POST['xlct'])){
     $id  = $_POST['id'];
+    $lsid  = $_POST['lsid'];
     $capbac  = $_POST['status'];
+    if($capbac == 2 ){
+    $queryl = "DELETE FROM lichsugiaodich WHERE `id`='{$lsid}'";
+    $results = mysqli_query($connect, $queryl);
+    }
     $query = "UPDATE `nguoidung` 
     SET `capbac`= '{$capbac}'
     WHERE `id`='{$id}'";

@@ -37,7 +37,7 @@
                                 </thead>
                                 <tbody>
                                 <?php 
-                                    $query = "SELECT a.*,b.ngaygui
+                                    $query = "SELECT a.*,b.ngaygui, b.id as 'lsid'
                                     FROM nguoidung as a,lichsugiaodich as b
                                     Where b.nguoidung_id = a.id
                                     ORDER BY b.id DESC";
@@ -73,6 +73,7 @@
                                                             Xác nhận đã nhận tiền nâng VIP của người dùng : <?php echo $arUser["tenhienthi"] ?>
                                                             <form action="function.php" method="post">
                                                                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $arUser["id"] ?>">
+                                                                <input type="hidden" class="form-control" id="id" name="lsid" value="<?php echo $arUser["lsid"] ?>">
                                                                 <div class="mt-2">
                                                                     <select class="form-control" name="status" required>
                                                                     <option value="" selected >-- Chọn tình trạng --</option>
